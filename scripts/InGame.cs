@@ -14,6 +14,15 @@ public class InGame : View
 
     public override void Update()
     {
-        Raylib.DrawTextureV(AssetManager.Instance.Textures["FactoryBg"][0], Vector2.Zero, Color.White);
+        
+    }
+
+    public override void Draw()
+    {
+        Texture2D texture = AssetManager.Instance.Textures["FactoryBg"][0];
+        Rectangle textureRec = new(0, 0, texture.Width, texture.Height);
+        Rectangle screenRec = new(0, 0, Raylib.GetScreenWidth(), Raylib.GetScreenHeight());
+
+        Raylib.DrawTexturePro(AssetManager.Instance.Textures["FactoryBg"][0], textureRec, screenRec, Vector2.Zero, 0f, Color.White);
     }
 }

@@ -21,7 +21,7 @@ class Program
         views.Add(mainMenu);
         currentView = mainMenu;
 
-        View inGame = new View("InGame");
+        View inGame = new InGame("InGame");
         views.Add(inGame);
 
         mainMenu.Initialize();
@@ -31,6 +31,7 @@ class Program
             currentView.Update();
 
             Raylib.BeginDrawing();
+            Raylib.ClearBackground(Color.Black);
 
             currentView.Draw();
 
